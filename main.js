@@ -1,4 +1,5 @@
 const electron = require("electron");
+const url = require('url');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
@@ -16,10 +17,15 @@ switch (process.platform) {
         pluginName = "libpepflashplayer.so";
         break;
 }
+
+const flashPluginPath = path.join(__dirname, pluginName);
+
 app.commandLine.appendSwitch(
-    "ppapi-flash-path",
-    path.join(__dirname, pluginName)
+    'ppapi-flash-path',
+    flashPluginPath
 );
+
+// app.commandLine.appendSwitch('ppapi-flash-version', '32.0.0.171');
 
 let mainWindow;
 
@@ -27,6 +33,7 @@ function createWindow() {
     mainWindow = new BrowserWindow({
         width: 800,
         height: 600,
+        autoHideMenuBar: true,
         webPreferences: {
             plugins: true
         }
@@ -38,6 +45,8 @@ function createWindow() {
     mainWindow.loadURL("http://fe.svc.ott.zala.by:8080/new/index.html#/");
 
     mainWindow.maximize();
+
+    mainWindow.openDevTools();
 
     mainWindow.on("closed", function () {
         mainWindow = null;
