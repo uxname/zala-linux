@@ -7,3 +7,7 @@ Zala Electron client for Linux x64
 ## Build
 - `yarn install`
 - `yarn build`
+
+## Download
+
+[Download](https://github.com/uxname/zala-linux/releases/latest) latest release
