@@ -1,5 +1,4 @@
 const electron = require("electron");
-const url = require('url');
 const app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
@@ -18,7 +17,7 @@ switch (process.platform) {
         break;
 }
 
-const flashPluginPath = path.join(__dirname, pluginName);
+const flashPluginPath = path.join(process.resourcesPath, '../assets', pluginName);
 
 app.commandLine.appendSwitch(
     'ppapi-flash-path',

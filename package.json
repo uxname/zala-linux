@@ -7,6 +7,22 @@
     "start": "npx electron .",
     "build": "npx electron-builder ."
   },
+  "build": {
+    "linux": {
+      "target": [
+        {
+          "target": "AppImage"
+        }
+      ]
+    },
+    "appImage": {
+      "systemIntegration": "doNotAsk"
+    },
+    "extraFiles": [
+      "assets"
+    ],
+    "asarUnpack": "**/assets/*"
+  },
   "devDependencies": {
     "electron": "4.2.0",
     "electron-builder": "^20.39.0"
