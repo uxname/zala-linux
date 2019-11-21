@@ -41,7 +41,7 @@ function createWindow() {
     mainWindow.setMenuBarVisibility(false);
     mainWindow.setMenu(null);
 
-    mainWindow.loadURL("http://fe.svc.ott.zala.by:8080/new/index.html#/");
+    mainWindow.loadURL("https://fe.svc.ott.zala.by/");
 
     mainWindow.maximize();
 
