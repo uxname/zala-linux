@@ -24,7 +24,7 @@
     "asarUnpack": "**/assets/*"
   },
   "devDependencies": {
-    "electron": "4.2.0",
+    "electron": "13.6.6",
     "electron-builder": "^20.39.0"
   }
 }
